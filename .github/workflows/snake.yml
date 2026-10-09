@@ -1,0 +1,73 @@
+name: Update contribution snake
+
+on:
+  schedule:
+    - cron: '23 21 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/snake.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Generate light and dark animations
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_snake=%2386a7ff
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%2360e7ce
+      - name: Publish generated SVGs to output branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROFILE_REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import base64, json, os, subprocess
+          from pathlib import Path
+
+          endpoint = f"repos/{os.environ['PROFILE_REPOSITORY']}"
+          def api(path, payload=None):
+              cmd = ['gh', 'api', f'{endpoint}/{path}']
+              if payload is not None:
+                  cmd += ['--method', 'POST', '--input', '-']
+              result = subprocess.run(cmd, input=json.dumps(payload) if payload is not None else None,
+                                      text=True, capture_output=True)
+              if result.returncode:
+                  raise RuntimeError(result.stderr)
+              return json.loads(result.stdout)
+
+          refs = api('git/matching-refs/heads/output')
+          ref = next((item for item in refs if item['ref'] == 'refs/heads/output'), None)
+          parent = ref['object']['sha'] if ref else None
+          entries = []
+          for name in ['github-contribution-grid-snake.svg', 'github-contribution-grid-snake-dark.svg']:
+              data = Path('dist', name).read_bytes()
+              if b'<svg' not in data or len(data) < 100:
+                  raise RuntimeError(f'Invalid SVG: {name}')
+              blob = api('git/blobs', {'content': base64.b64encode(data).decode(), 'encoding': 'base64'})
+              entries.append({'path': name, 'mode': '100644', 'type': 'blob', 'sha': blob['sha']})
+          tree = api('git/trees', {'tree': entries})
+          if parent and api(f'git/commits/{parent}')['tree']['sha'] == tree['sha']:
+              print('Animation is already up to date.')
+          else:
+              commit = api('git/commits', {'message': 'Update contribution snake', 'tree': tree['sha'],
+                                           'parents': [parent] if parent else []})
+              if parent:
+                  subprocess.run(['gh', 'api', f'{endpoint}/git/refs/heads/output', '--method', 'PATCH',
+                                  '--input', '-'], input=json.dumps({'sha': commit['sha'], 'force': False}),
+                                 text=True, check=True, stdout=subprocess.DEVNULL)
+              else:
+                  api('git/refs', {'ref': 'refs/heads/output', 'sha': commit['sha']})
+              print('Published contribution animations.')
+          PY

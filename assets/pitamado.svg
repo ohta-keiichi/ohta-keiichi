@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">PitaMado</title><desc id="desc">A little order for your Mac. Swift and macOS.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#142a3b"/><stop offset="1" stop-color="#172443"/></linearGradient></defs>
+<rect width="1200" height="300" rx="22" fill="url(#bg)"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif">
+<text x="44" y="48" fill="#71e5cf" font-size="12" font-weight="700" letter-spacing="2.4">FEATURED / 01</text>
+<text x="42" y="117" fill="#f5f7ff" font-size="54" font-weight="750" letter-spacing="-1.5">PitaMado</text>
+<text x="44" y="159" fill="#c3d1ee" font-size="23">A little order for your Mac.</text>
+<rect x="44" y="183" width="70" height="27" rx="8" fill="#354253"/><text x="60" y="202" font-size="13" fill="#ffd1b2">Swift</text>
+<rect x="124" y="183" width="82" height="27" rx="8" fill="#2a3f57"/><text x="139" y="202" font-size="13" fill="#bfd0ff">macOS</text>
+<text x="44" y="259" fill="#71e5cf" font-size="15" font-weight="600">Explore the project <tspan dx="8">↗</tspan></text>
+<g transform="translate(635 38)">
+<rect width="500" height="223" rx="13" fill="#0d1729" stroke="#405974"/><path d="M0 28H500" stroke="#405974"/>
+<circle cx="17" cy="14" r="4" fill="#ff8f95"/><circle cx="32" cy="14" r="4" fill="#ffd482"/><circle cx="47" cy="14" r="4" fill="#60e7ce"/>
+<rect x="13" y="40" width="144" height="169" rx="8" fill="#273e64"/><rect x="169" y="40" width="318" height="85" rx="8" fill="#285449"/><rect x="169" y="136" width="318" height="73" rx="8" fill="#483a60"/>
+<g font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="13">
+<text x="28" y="66" fill="#b2c5ff">Browser</text><rect x="28" y="82" width="113" height="7" rx="3" fill="#5279ab"/>
+<rect x="28" y="106" width="84" height="5" rx="2" fill="#41608b"/><rect x="28" y="120" width="102" height="5" rx="2" fill="#41608b"/><rect x="28" y="134" width="72" height="5" rx="2" fill="#41608b"/>
+<text x="185" y="67" fill="#93ebd3">Finder</text><path d="M186 84h17l5 5h23v20h-45zM245 84h17l5 5h23v20h-45zM304 84h17l5 5h23v20h-45z" fill="#60c4a3"/>
+<text x="185" y="162" fill="#dfbaf6">Terminal</text><text x="185" y="188" fill="#bca8d5">$ make room for ideas<tspan fill="#60e7ce"> ▍</tspan></text>
+</g></g></g></svg>

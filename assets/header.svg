@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">Hi, I'm Keiichi.</title><desc id="desc">Small ideas, useful products. Web, apps and everyday tools.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111c36"/><stop offset="1" stop-color="#172445"/></linearGradient>
+<linearGradient id="accent"><stop stop-color="#60e7ce"/><stop offset=".5" stop-color="#86a7ff"/><stop offset="1" stop-color="#f1a5d9"/></linearGradient>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#97b0d9" opacity=".12"/></pattern>
+</defs>
+<rect width="1200" height="420" rx="26" fill="url(#bg)"/><rect width="1200" height="420" rx="26" fill="url(#dots)"/>
+<circle cx="1070" cy="52" r="195" fill="#86a7ff" opacity=".07"/><circle cx="760" cy="416" r="170" fill="#60e7ce" opacity=".05"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif">
+<rect x="60" y="55" width="198" height="33" rx="16.5" fill="#60e7ce" fill-opacity=".12" stroke="#60e7ce" stroke-opacity=".3"/>
+<circle cx="80" cy="71" r="4" fill="#60e7ce"/><text x="95" y="77" fill="#8becd8" font-size="13" font-weight="700" letter-spacing="1.4">HELLO, GITHUB!</text>
+<text x="58" y="160" fill="#f5f7ff" font-size="63" font-weight="750" letter-spacing="-2.4">Hi, I'm Keiichi.</text>
+<text x="62" y="212" fill="#c3d1ee" font-size="26">Small ideas, useful products.</text>
+<rect x="62" y="239" width="306" height="4" rx="2" fill="url(#accent)"/>
+<g font-size="14" font-weight="600">
+<rect x="62" y="281" width="84" height="34" rx="10" fill="#223756"/><text x="87" y="303" fill="#8becd8">WEB</text>
+<rect x="157" y="281" width="92" height="34" rx="10" fill="#293656"/><text x="178" y="303" fill="#b2c5ff">APPS</text>
+<rect x="260" y="281" width="180" height="34" rx="10" fill="#39304d"/><text x="279" y="303" fill="#f0badd">EVERYDAY TOOLS</text>
+</g>
+<text x="62" y="367" fill="#8198bb" font-size="14" letter-spacing="2">@OHTA-KEIICHI</text>
+<g transform="translate(704 86) rotate(-5 173 119)">
+<rect x="0" y="12" width="368" height="252" rx="18" fill="#070e20" opacity=".4"/>
+<rect width="368" height="252" rx="18" fill="#1b2d4e" stroke="#415a80"/><path d="M0 45H368" stroke="#415a80"/>
+<circle cx="23" cy="23" r="5" fill="#ff8f95"/><circle cx="42" cy="23" r="5" fill="#ffd482"/><circle cx="61" cy="23" r="5" fill="#60e7ce"/>
+<text x="250" y="28" font-size="11" fill="#8da4c9">playground.js</text>
+<g font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="17">
+<text x="25" y="84" fill="#b7a2f6">const <tspan fill="#c5d4ef">idea = {</tspan></text>
+<text x="44" y="120" fill="#c5d4ef">curiosity: <tspan fill="#ffd482">true</tspan>,</text>
+<text x="44" y="156" fill="#c5d4ef">craft: <tspan fill="#60e7ce">"a little better"</tspan></text>
+<text x="25" y="192" fill="#c5d4ef">};</text>
+<text x="25" y="228" fill="#86a7ff">makeSomething<tspan fill="#c5d4ef">(idea);</tspan></text>
+</g></g>
+<g transform="translate(1021 286) rotate(9)"><rect width="104" height="64" rx="15" fill="#60e7ce"/><text x="23" y="44" font-family="ui-monospace,monospace" font-size="32" font-weight="700" fill="#102339">&lt;/&gt;</text></g>
+<path d="M1080 69v24m-12-12h24M651 299v16m-8-8h16" stroke="#ffd482" stroke-width="3" stroke-linecap="round"/>
+<circle cx="650" cy="111" r="6" fill="#f1a5d9"/><circle cx="1141" cy="218" r="4" fill="#86a7ff"/>
+</g></svg>
